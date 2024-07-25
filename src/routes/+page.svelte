@@ -1,4 +1,6 @@
 <script>
+
+    
     import '$lib/main.less'
     import {
         Content,
@@ -35,7 +37,7 @@
     <h1>Events</h1>
     <StructuredList>
         {#each Posts as post}
-            <UserPost post={post}></UserPost>
+            <UserPost post={post} ></UserPost>
         {/each}
     </StructuredList>
 </Content>

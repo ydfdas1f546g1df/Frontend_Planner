@@ -1,8 +1,18 @@
 <script>
+    import { onMount } from 'svelte';
+    import { globalState } from '$lib/store';
+    let state;
+    const unsubscribe = globalState.subscribe(authenticated => {
+        state = authenticated;
+    });
+    onMount(() => {
+        if (state.Gauthenticated === false && window.location.pathname !== "/login" && window.location.pathname !== "/register") {
+            window.location.href = "/login";
+        }
+    });
 import HeaderComponent from "$lib/components/headercomponent/HeaderComponent.svelte";
-let authenticated = true;
 import '$lib/main.less'
 </script>
 
-<HeaderComponent authenticated={authenticated}/>
+<HeaderComponent authenticated={state.Gauthenticated}/>
 <slot></slot>

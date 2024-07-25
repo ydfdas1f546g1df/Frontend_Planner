@@ -19,10 +19,12 @@
      *     | "danger-ghost"} kind
      *
      */
+    import { ToastNotification } from "carbon-components-svelte";
     import {Button, StructuredList, StructuredListCell, StructuredListRow} from "carbon-components-svelte";
     import ChevronUpOutline from "carbon-icons-svelte/lib/ChevronUpOutline.svelte";
     import ChevronDownOutline from "carbon-icons-svelte/lib/ChevronDownOutline.svelte";
     import "./Post.less";
+    import { fade } from "svelte/transition";
     /** @type {Post} */
     export let post;
 
@@ -34,8 +36,10 @@
     let buttonDownkind = "secondary";
     
 
-    
+
+
     function upvote() {
+
         if (personalVote === 0 || personalVote === -1) {
             buttonUpkind = "primary";
             buttonDownkind = "secondary";
@@ -49,6 +53,7 @@
     }
 
     function downvote() {
+
         if (personalVote === 0 || personalVote === 1) {
             buttonDownkind = "danger";
             buttonUpkind = "secondary";

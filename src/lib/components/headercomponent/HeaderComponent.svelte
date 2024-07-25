@@ -27,25 +27,36 @@
         <HeaderGlobalAction
                 iconDescription="Add Event"
                 tooltipAlignment="center"
-                icon={DataEnrichmentAdd}>
-        </HeaderGlobalAction>
+                icon={DataEnrichmentAdd}
+                on:click={() => {
+                    window.location.href = "/add-event";
+                }}
+        />
         <HeaderGlobalAction
                 iconDescription="Profile"
                 tooltipAlignment="center"
                 icon={UserAvatarFilledAlt}
+                on:click={() => {
+                    window.location.href = "/profile";
+                }}
         
         />
         <HeaderGlobalAction
                 iconDescription="Log out"
                 tooltipAlignment="end"
                 icon={Logout}
+                on:click={() => {
+                    window.location.href = "/logout";
+                }}
         />
         {:else}
             <HeaderGlobalAction
                     iconDescription="Log in"
                     tooltipAlignment="end"
                     icon={Login}
-                    
+                    on:click={() => {
+                        window.location.href = "/login";
+                    }}
             />
         {/if}
         

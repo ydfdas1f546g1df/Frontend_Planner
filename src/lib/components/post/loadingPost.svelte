@@ -1,5 +1,5 @@
-<script>
-    import '$lib/typedef/typedef.js'
+<script lang="ts">
+    import '$lib/typedef/typedef.ts'
     import {SkeletonText, ToastNotification} from "carbon-components-svelte";
     import {Button, StructuredList, StructuredListCell, StructuredListRow} from "carbon-components-svelte";
     import ChevronUpOutline from "carbon-icons-svelte/lib/ChevronUpOutline.svelte";

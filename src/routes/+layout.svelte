@@ -2,25 +2,33 @@
     import '$lib/main.less'
     import PostEdit from "$lib/components/postEdit/PostEdit.svelte";
     import {onMount} from 'svelte';
-    import {globalState} from '$lib/store';
+    import {globalState} from '$lib/store.js';
     import {
         Content,
-        Dropdown,
         Theme,
         HeaderGlobalAction,
         Header,
         SkipToContent,
         HeaderUtilities,
-        LocalStorage, Popover
+        Popover
     } from "carbon-components-svelte";
     import Logout from "carbon-icons-svelte/lib/Logout.svelte";
     import UserAvatarFilledAlt from "carbon-icons-svelte/lib/UserAvatarFilledAlt.svelte";
     import DataEnrichmentAdd from "carbon-icons-svelte/lib/DataEnrichmentAdd.svelte";
     import Login from "carbon-icons-svelte/lib/Login.svelte";
 
+    /**
+     * @typedef {Object} GlobalState
+     * @property {boolean} Gauthenticated - The authentication status of the user.
+     * @property {User | null} Guser - The user object.
+     *
+     */
+    /**
+     * @type {GlobalState}
+     */
     let state;
-    const unsubscribe = globalState.subscribe(authenticated => {
-        state = authenticated;
+    const unsubscribe = globalState.subscribe(gstate => {
+        state = gstate;
     });
     /**
      * @type CarbonTheme | undefined
@@ -38,7 +46,7 @@
     });
 
 
-    let authenticated = true;
+    let authenticated = state.Gauthenticated;
     let openAddPost = false
 
 </script>

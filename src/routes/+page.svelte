@@ -1,17 +1,4 @@
-<script>
-    /**
-     * @typedef {Object} Post
-     * @property {number} ID - The unique identifier for the post.
-     * @property {string} Title - The title of the post.
-     * @property {string} Content - The content of the post.
-     * @property {string} ShortContent - A short description of the post.
-     * @property {number} Owner - The unique identifier for the owner of the post.
-     * @property {string} Timestamp - The timestamp of when the post was created.
-     * @property {string} OwnerUsername - The name of the owner of the post.
-     * @property {number} TotalVotes - The total number of votes the post has.
-     * @property {number} Upvotes - The total number of upvotes the post has.
-     * @property {number} Downvotes - The total number of downvotes the post has.
-     */
+<script lang="ts">
 
     import '$lib/main.less'
     import { onMount } from "svelte";

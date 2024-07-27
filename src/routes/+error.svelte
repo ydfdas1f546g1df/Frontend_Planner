@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { page } from '$app/stores';
     import {Content, InlineNotification, NotificationActionButton} from "carbon-components-svelte";
 </script>

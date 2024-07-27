@@ -1,4 +1,4 @@
-import '$lib/typedef/typedef.js'
+import '$lib/typedef/typedef.ts'
 /**
  *
  * @type Post[]

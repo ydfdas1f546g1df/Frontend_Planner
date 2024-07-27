@@ -13,7 +13,6 @@
     import {getPosts} from "$lib/backendGetter.js";
 
     let loading = false;
-    /** @type Post[] */
     let Posts = [{
         ID: 0,
         Title: "",

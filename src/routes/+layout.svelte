@@ -2,7 +2,7 @@
     import '$lib/main.less'
     import PostEdit from "$lib/components/postEdit/PostEdit.svelte";
     import {onMount} from 'svelte';
-    import {globalState} from '$lib/store.js';
+    import {globalState} from '$lib/store.ts';
     import {
         Content,
         Theme,
@@ -17,22 +17,12 @@
     import DataEnrichmentAdd from "carbon-icons-svelte/lib/DataEnrichmentAdd.svelte";
     import Login from "carbon-icons-svelte/lib/Login.svelte";
 
-    /**
-     * @typedef {Object} GlobalState
-     * @property {boolean} Gauthenticated - The authentication status of the user.
-     * @property {User | null} Guser - The user object.
-     *
-     */
-    /**
-     * @type {GlobalState}
-     */
+
     let state;
     const unsubscribe = globalState.subscribe(gstate => {
         state = gstate;
     });
-    /**
-     * @type CarbonTheme | undefined
-     */
+
     let theme
     onMount(() => {
         console.clear();
@@ -57,21 +47,7 @@
     </svelte:fragment>
     <HeaderUtilities>
         {#if authenticated}
-<!--            <Dropdown-->
-<!--                    title="Theme"-->
-<!--                    selectedId={theme}-->
-<!--                    items={[-->
-<!--                    {text: "Light", id: "white"},-->
-<!--                    {text: "Grey", id: "g10"},-->
-<!--                    {text: "Dark Grey", id: "g80"},-->
-<!--                    {text: "Light Black", id: "g90"},-->
-<!--                    {text: "Black", id: "g100"}-->
-<!--                ]}-->
-<!--                    on:select={e => {-->
-<!--                    localStorage.setItem("__carbon-theme", e.detail.selectedItem.id);-->
-<!--                    console.log(e.detail.selectedItem.id);-->
-<!--                }}-->
-<!--            />-->
+
             
             <HeaderGlobalAction
                     iconDescription="Add Event"
